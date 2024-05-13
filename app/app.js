@@ -158,7 +158,7 @@ function main() {
                     if (cantidad_producto_elegido === null){
                         break
                     } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
-                        if (confirm(confirmar_agregacion(producto_elegido_frescos, cantidad_producto_elegido))) {
+                        if (confirm(confirmar_agregacion(producto_elegido_bebidas, cantidad_producto_elegido))) {
                             agregar_carrito(producto_elegido_bebidas, cantidad_producto_elegido)
                             mostrar_carrito()
                     }
