@@ -84,7 +84,7 @@ function mostrar_categoria(categoria){
     let menu_detallado=""
     
     for (let item of categoria){
-        menu_detallado += "["+contador_id+"] "+ item.nombre + " Precio: " + item.precio + " Stock: " + item.stock +"\n";
+        menu_detallado += "["+contador_id+"] "+ item.nombre + " Precio: " + item.precio + "\n";
         contador_id += 1
     }    
     while (true) { 
