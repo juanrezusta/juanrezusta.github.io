@@ -107,89 +107,104 @@ let carrito=[]
 
 function main() {
     let terminarCompra = false;
+    let iniciarCompra=confirm("Desea Ingresar al Mercadito?")
 
-    while (true) {
-        let primer_opcion = parseInt(prompt("Bienvenido a MercaditoSape:\n\nQue deseas llevar:\n[1] Almacen\n[2] Frescos\n[3] Bebidas\n[4] Terminar compra"));
-
-        switch(primer_opcion) {
-            case 1:
-                {let producto_elegido_almacen = mostrar_categoria(almacen);
-                let cantidad_producto_elegido;
-                do {
-                    cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_almacen))
-                    if (cantidad_producto_elegido === null){
-                        break
-                    } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
-                        if (confirm(confirmar_agregacion(producto_elegido_almacen, cantidad_producto_elegido))) {
-                            agregar_carrito(producto_elegido_almacen, cantidad_producto_elegido)
-                            mostrar_carrito()
-                    }
-                    break
-                } else {
-                    alert("Por favor, ingresa un numero positivo.")
-                }
-                }while (true)
-                break;
-                }   
-            case 2:
-                {let producto_elegido_frescos = mostrar_categoria(frescos);
-                let cantidad_producto_elegido;
-                do {
-                    cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_frescos))
-                    if (cantidad_producto_elegido === null){
-                        break
-                    } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
-                        if (confirm(confirmar_agregacion(producto_elegido_frescos, cantidad_producto_elegido))) {
-                            agregar_carrito(producto_elegido_frescos, cantidad_producto_elegido)
-                            mostrar_carrito()
-                    }
-                    break
-                } else {
-                    alert("Por favor, ingresa un numero positivo.")
-                }
-                }while (true)
-                break;
-                }   
-            case 3:
-                {let producto_elegido_bebidas = mostrar_categoria(bebidas);
-                let cantidad_producto_elegido;
-                do {
-                    cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_bebidas))
-                    if (cantidad_producto_elegido === null){
-                        break
-                    } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
-                        if (confirm(confirmar_agregacion(producto_elegido_bebidas, cantidad_producto_elegido))) {
-                            agregar_carrito(producto_elegido_bebidas, cantidad_producto_elegido)
-                            mostrar_carrito()
-                    }
-                    break
-                } else {
-                    alert("Por favor, ingresa un numero positivo.")
-                }
-                }while (true)
-    
-                break;
-                }   
-            case 4:
-                if (carrito.length === 0) { 
-                    alert("NO COMPRASTE NADA, GRACIAS VUELVA PRONTO");
-                    break;
-                } else { 
-                    terminarCompra = confirm("Deseas terminar la compra?");
-                    if (terminarCompra){
-                        console.log(facturar());
-                        alert(facturar());
-                        carrito = []
+        while (iniciarCompra) {
+            let elegir_categoria = prompt("Bienvenido a MercaditoSape:\n\nQue deseas llevar:\n[1] Almacen\n[2] Frescos\n[3] Bebidas\n[4] Terminar compra")
+            
+            if(elegir_categoria!=null){
+                elegir_categoria=parseInt(elegir_categoria)
+                switch(elegir_categoria) {
+                    case 1:
+                        {let producto_elegido_almacen = mostrar_categoria(almacen);
+                        let cantidad_producto_elegido;
+                        do {
+                            cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_almacen))
+                            if (cantidad_producto_elegido === null){
+                                break
+                            } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
+                                if (confirm(confirmar_agregacion(producto_elegido_almacen, cantidad_producto_elegido))) {
+                                    agregar_carrito(producto_elegido_almacen, cantidad_producto_elegido)
+                                    mostrar_carrito()
+                            }
+                            break
+                        } else {
+                            alert("Por favor, ingresa un numero positivo.")
+                        }
+                        }while (true)
                         break;
-                    }else{
+                        }   
+                    case 2:
+                        {let producto_elegido_frescos = mostrar_categoria(frescos);
+                        let cantidad_producto_elegido;
+                        do {
+                            cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_frescos))
+                            if (cantidad_producto_elegido === null){
+                                break
+                            } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
+                                if (confirm(confirmar_agregacion(producto_elegido_frescos, cantidad_producto_elegido))) {
+                                    agregar_carrito(producto_elegido_frescos, cantidad_producto_elegido)
+                                    mostrar_carrito()
+                            }
+                            break
+                        } else {
+                            alert("Por favor, ingresa un numero positivo.")
+                        }
+                        }while (true)
                         break;
-                    }
+                        }   
+                    case 3:
+                        {let producto_elegido_bebidas = mostrar_categoria(bebidas);
+                        let cantidad_producto_elegido;
+                        do {
+                            cantidad_producto_elegido = prompt(cantidad_de_producto(producto_elegido_bebidas))
+                            if (cantidad_producto_elegido === null){
+                                break
+                            } else if (!isNaN(cantidad_producto_elegido) && parseInt(cantidad_producto_elegido)>=0){
+                                if (confirm(confirmar_agregacion(producto_elegido_bebidas, cantidad_producto_elegido))) {
+                                    agregar_carrito(producto_elegido_bebidas, cantidad_producto_elegido)
+                                    mostrar_carrito()
+                            }
+                            break
+                        } else {
+                            alert("Por favor, ingresa un numero positivo.")
+                        }
+                        }while (true)
+            
+                        break;
+                        }   
+                    case 4:
+                        if (carrito.length === 0) { 
+                            alert("Su carrito se encuentra vacio.");
+                            break;
+                        } else { 
+                            terminarCompra = confirm("Deseas terminar la compra?");
+                            if (terminarCompra){
+                                console.log(facturar());
+                                alert(facturar());
+                                carrito = []
+                                break;
+                            }else{
+                                break;
+                            }
 
+                        }
+                    default:
+                        alert("No ingresaste una opción válida");
                 }
-            default:
-                alert("No ingresaste una opción válida");
+            }else{
+                if(carrito.length > 0){
+                    let ultimo_aviso=confirm("Aun tiene elementos en su carrito de compra, desea salir de todas formas?")
+                    if (ultimo_aviso){
+                        break
+                    }
+                }else{
+                    break
+                }
+            }   
         }
     }
-}
+
+
 
 main()
