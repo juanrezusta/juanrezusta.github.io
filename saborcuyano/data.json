@@ -1,0 +1,9 @@
+[
+    { "id": 0, "sabor": "Carne", "descripcion": "Carne picada, cebolla, morron, cebolla de verdeo.", "ruta": "/img/carne.jpg" },
+    { "id": 1, "sabor": "Pollo con salsa blanca", "descripcion": "Pollo desmenuzado con cebolla de verdeo en salsa blanca.", "ruta": "/img/pollooo.jpg" },
+    { "id": 2, "sabor": "Jamon y queso", "descripcion": "Jamón cocido natural y queso muzzarella.", "ruta": "/img/jamonyqueso.jpg" },
+    { "id": 3, "sabor": "Tapa de asado", "descripcion": "Tapa de asado desmechada, cebolla, morron, vino tinto.", "ruta": "/img/tapadeasado.jpg" },
+    { "id": 4, "sabor": "Cheeseburger", "descripcion": "Carne picada, queso cheddar, bacon salteado, cebolla, morron.", "ruta": "/img/cheeseburger.jpg" },
+    { "id": 5, "sabor": "Verdura", "descripcion": "Acelga, cebolla, morron, salsa blanca y queso muzzarella.", "ruta": "/img/verdura.jpg" },
+    { "id": 6, "sabor": "Brócoli", "descripcion": "Brocoli, salsa blanca, cebolla, morron.", "ruta": "/img/brocoli.jpg" }
+]
